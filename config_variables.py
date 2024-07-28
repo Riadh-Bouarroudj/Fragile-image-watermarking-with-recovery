@@ -4,27 +4,25 @@ import numpy as np
 import imageio.v2 as imageio
 import os
 
-bloc_size=2                   # Choose bloc_size=2, BPP=2 OR bloc_size=3, BPP=1
-BPP=2
-img_size=512
-wat_size=int(img_size/bloc_size/2)
-
-Color_image=True              #False mean that images will be converted to grayscale
-self_embed=True
-Auth_encryption=True
-key = (1.5, 2.3)
-Rec_scrambling=True           #Mendatory for recovery
-key1=5
-key2=10
-embedding_type="DWT"
-
-
 
 current_directory = os.path.dirname(__file__)
 img_path = os.path.join(current_directory, 'Images/Saliboat.tiff')
 wat_path = os.path.join(current_directory, 'Images/Peppers.tiff')
 
+img_size=512
+bloc_size=2                   #Choose bloc_size=2, BPP=2 OR bloc_size=3, BPP=1
+BPP=2                         #Embedding capacity
 
+Color_image=True              #False mean that images will be converted to grayscale
+self_embed=True               #Meaning that the watermark is generated from the cover image
+Auth_encryption=True          #Encrypt the authentication watermark using Henon map
+key = (1.5, 2.3)
+Rec_scrambling=True           #Scramble the recovery watermarks using Arnold transformation. This is mendatory to perform recovery
+key1=5
+key2=10
+embedding_type="DWT"          #The method used during the authentication watermark generation
+
+wat_size=int(img_size/bloc_size/2)
 # Load the cover image
 if img_path.endswith('dcm'):               #Read DICOM files
     dataset = pydicom.dcmread(img_path)
