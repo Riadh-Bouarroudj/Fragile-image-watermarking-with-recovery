@@ -12,7 +12,7 @@ To assess the quality of the watermarked and recovered images produced by the mo
 - This code works with both color and grayscale images with a bit depth of 8 bits (pixel values ranging between 0 and 255). If you want to work with images with a bit depth greater than 8 or containing negative values, the code will need some adjustments.
 - The file "Attacks.py" contains the attacks used to evaluate the proposed method robustness, and two functions ("TIFF_save" and "PNG_save") for saving the watermarked image. It is worth noting that using "JPEG_save" is considered an attack since the watermarked image will undergo compression, which is not possible when using Fragile watermarking models.
 - The file "config_variables.py" contains all the inputs that can be changed, such as the cover image path, the image size, the block size, the embedding capacity (BPP), etc. I recommend using (bloc_size=2 and BPP=2) for better recovered image quality, or (bloc_size=3 and BPP=1) for better watermarked image quality.
--"Functions.py" contains all the essential functions used in this method, including embedding, extraction recovery, etc.
+- "Functions.py" contains all the essential functions used in this method, including embedding, extraction recovery, etc.
 - The method can be launched from "Main.py", which contains an example of the embedding and extraction procedures, as well as the attacks performed to evaluate the model’s robustness.
 
 # Data citation
