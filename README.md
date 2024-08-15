@@ -4,7 +4,7 @@ With the widespread availability of powerful image manipulation software, achiev
 
 Fragile watermarking is a data-hiding technique that conceals information, known as the watermark within an image (referred to as the host or cover image) without causing significant distortion to the original image. The resulting image, termed the watermarked image, is then transmitted to the receiver, who can extract the watermark to determine whether the image has undergone any alteration. If the watermarked image is found to be altered, the tampered areas will be accurately highlighted, and the recovery process will take place to restore the altered regions, resulting in a recovered image free from significant tampering despite the encountered alterations.
 
-![Untitled Diagram (17)](https://github.com/user-attachments/assets/4c27a2ea-d7f7-422d-9357-7861e377f087)
+![Untitled Diagram (18)](https://github.com/user-attachments/assets/9e26cc86-c5e9-440e-b944-16357015ddda)
 
 In the proposed solution, one authentication watermark for tamper localization and two recovery watermarks for content recovery are embedded within the cover image using the Least Significant Bit (LSB) substitution technique. These three watermarks are generated from the cover image to keep the process fully blind, meaning that no information need to be stored on the receiver side (except for the decryption keys). Moreover, to enhance the model’s security, the authentication watermark is encrypted using the Henon map, while the two recovery watermarks are scrambled using the Arnold transformation. This scrambling operation allows the recovery information of a block to be stored in another block to perform recovery in case of tampering.
 
